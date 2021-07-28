@@ -1,9 +1,12 @@
 package com.test.jmh.entries;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
 public class TestEntry {
     private String firstName;
     private String lastName;
