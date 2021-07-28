@@ -24,7 +24,7 @@ public class ExecutionPlan {
     public JacksonMapper jacksonMapper;
     private final Gson gson = new Gson();
 
-    @Setup(Level.Invocation)
+    @Setup(Level.Iteration)
     public void setUp() {
         gsonMapper = new GsonMapper();
         jacksonMapper = new JacksonMapper();
