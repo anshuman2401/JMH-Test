@@ -7,6 +7,7 @@ public class MapperTest {
 
     @Threads(Threads.MAX)
     @Benchmark
+    @Fork(value = 1, warmups = 3)
     @BenchmarkMode(Mode.Throughput)
     public void gsonMapperToJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (int i =0 ; i < executionPlan.iterations; i++)
@@ -15,6 +16,7 @@ public class MapperTest {
 
     @Threads(Threads.MAX)
     @Benchmark
+    @Fork(value = 1, warmups = 3)
     @BenchmarkMode(Mode.Throughput)
     public void jacksonMapperToJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) throws Exception {
         for (int i =0 ; i < executionPlan.iterations; i++)
@@ -23,6 +25,7 @@ public class MapperTest {
 
     @Threads(Threads.MAX)
     @Benchmark
+    @Fork(value = 1, warmups = 3)
     @BenchmarkMode(Mode.Throughput)
     public void gsonMapperFromJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (int i =0 ; i < executionPlan.iterations; i++)
@@ -31,6 +34,7 @@ public class MapperTest {
 
     @Threads(Threads.MAX)
     @Benchmark
+    @Fork(value = 1, warmups = 3)
     @BenchmarkMode(Mode.Throughput)
     public void jacksonMapperFromJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) throws Exception {
         for (int i =0 ; i < executionPlan.iterations; i++)
