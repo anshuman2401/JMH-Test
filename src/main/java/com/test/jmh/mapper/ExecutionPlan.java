@@ -9,8 +9,6 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
-import java.util.Date;
-
 @State(Scope.Benchmark)
 public class ExecutionPlan {
 
@@ -28,7 +26,6 @@ public class ExecutionPlan {
         testEntry = new TestEntry();
         testEntry.setAge(23);
         testEntry.setAllow(false);
-        testEntry.setDob(new Date());
         testEntry.setHealth(true);
         testEntry.setFirstName("Anshuman");
         testEntry.setLastName("Kaushik");

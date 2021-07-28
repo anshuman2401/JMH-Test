@@ -36,7 +36,6 @@ public class ExecutionPlan {
             TestEntry testEntry = new TestEntry();
             testEntry.setAge(23213);
             testEntry.setAllow(false);
-            testEntry.setDob(new Date());
             testEntry.setHealth(true);
             testEntry.setFirstName("Anshuman Kaushik test big string what should be the length of string to test it");
             testEntry.setLastName("Kaushik");
