@@ -1,6 +1,5 @@
 package com.test.jmh.jsonmapper;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.test.jmh.entries.TestEntry;
 import com.test.jmh.jsonmapper.impl.GsonMapper;
@@ -11,7 +10,6 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @State(Scope.Benchmark)

@@ -5,7 +5,7 @@ import org.openjdk.jmh.infra.Blackhole;
 
 public class MapperTest {
 
-    @Threads(Threads.MAX)
+//    @Threads(Threads.MAX)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void gsonMapperToJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) {
@@ -13,7 +13,7 @@ public class MapperTest {
             blackhole.consume(executionPlan.gsonMapper.toJson(executionPlan.testEntryList.get(i)));
     }
 
-    @Threads(Threads.MAX)
+//    @Threads(Threads.MAX)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void jacksonMapperToJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) throws Exception {
@@ -21,7 +21,7 @@ public class MapperTest {
             blackhole.consume(executionPlan.jacksonMapper.toJson(executionPlan.testEntryList.get(i)));
     }
 
-    @Threads(Threads.MAX)
+//    @Threads(Threads.MAX)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void gsonMapperFromJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) {
@@ -29,7 +29,7 @@ public class MapperTest {
             blackhole.consume(executionPlan.gsonMapper.fromJson(executionPlan.testEntryStringList.get(i)));
     }
 
-    @Threads(Threads.MAX)
+//    @Threads(Threads.MAX)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void jacksonMapperFromJsonTest(Blackhole blackhole, ExecutionPlan executionPlan) throws Exception {
