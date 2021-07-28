@@ -15,7 +15,7 @@ import java.util.List;
 @State(Scope.Benchmark)
 public class ExecutionPlan {
 
-    public int iterations = 100;
+    public int iterations = 500;
     public List<TestEntry> testEntryList;
     public List<String> testEntryStringList;
     public GsonMapper gsonMapper;
