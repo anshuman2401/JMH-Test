@@ -11,7 +11,6 @@ public class HandMappingConverter implements Converter {
         TestDaoEntity testDaoEntity = new TestDaoEntity();
         testEntry.setAge(testEntry.getAge());
         testEntry.setAllow(testEntry.isAllow());
-        testEntry.setDob(testEntry.getDob());
         testEntry.setHealth(testEntry.getHealth());
         testEntry.setFirstName(testEntry.getFirstName());
         testEntry.setLastName(testEntry.getLastName());
