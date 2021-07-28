@@ -9,12 +9,12 @@ public class GsonMapper implements Mapper {
     private final Gson gson = new Gson();
 
     @Override
-    public TestEntry toJson(String value) {
-        return gson.fromJson(value, TestEntry.class);
+    public String toJson(TestEntry value) {
+        return gson.toJson(value);
     }
 
     @Override
-    public String fromJson(TestEntry value) {
-        return gson.toJson(value);
+    public TestEntry fromJson(String value) {
+        return gson.fromJson(value, TestEntry.class);
     }
 }

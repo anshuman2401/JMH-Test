@@ -10,12 +10,12 @@ public class JacksonMapper implements Mapper {
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
-    public TestEntry toJson(String value) throws JsonProcessingException {
-        return mapper.readValue(value, TestEntry.class);
+    public String toJson(TestEntry value) throws JsonProcessingException {
+        return mapper.writeValueAsString(value);
     }
 
     @Override
-    public String fromJson(TestEntry value) throws Exception {
-        return mapper.writeValueAsString(value);
+    public TestEntry fromJson(String value) throws Exception {
+        return mapper.readValue(value, TestEntry.class);
     }
 }
