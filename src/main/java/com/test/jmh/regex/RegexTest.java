@@ -24,19 +24,17 @@ public class RegexTest {
 //        }
 //    }
 
-    @Threads(value = Threads.MAX)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void emailRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (String email: executionPlan.emailList) {
-            blackhole.consume(executionPlan.emailRegexValidator.validate(email));
+            blackhole.consume(executionPlan.emailRegexValidator.validate(email.trim()));
         }
     }
 
-    @Threads(value = Threads.MAX)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
-    public void emailRegexTailingTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+    public void emailRegexTrailingTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (String email: executionPlan.emailList) {
             blackhole.consume(executionPlan.emailRegexTrailingSpaceValidator.validate(email));
         }

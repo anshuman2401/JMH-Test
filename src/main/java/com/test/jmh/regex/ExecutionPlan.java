@@ -22,7 +22,7 @@ public class ExecutionPlan {
     public EmailRegexTrailingSpaceValidator emailRegexTrailingSpaceValidator;
     public List<String> emailList;
 
-    @Setup(Level.Iteration)
+    @Setup(Level.Invocation)
     public void setUp() {
         wildCardRegexValidator = new WildCardRegexValidator();
         emailRegexLookBehindValidator = new EmailRegexLookBehindValidator();
@@ -30,15 +30,15 @@ public class ExecutionPlan {
         emailRegexTrailingSpaceValidator = new EmailRegexTrailingSpaceValidator();
         emailList = new ArrayList<>();
 
-        for (int i = 0; i < 180; i++) {
+        for (int i = 0; i < 90; i++) {
             emailList.add(RandomUtils.getRandomEmail());
         }
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 15; i++) {
             emailList.add(RandomUtils.getRandomInvalidEmail());
         }
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 15; i++) {
             emailList.add(RandomUtils.getRandomEmailWithTrailingSpace());
         }
     }
