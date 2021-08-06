@@ -22,7 +22,7 @@ public class ExecutionPlan {
     public EmailRegexTrailingSpaceValidator emailRegexTrailingSpaceValidator;
     public List<String> emailList;
 
-    @Setup(Level.Invocation)
+    @Setup(Level.Iteration)
     public void setUp() {
         wildCardRegexValidator = new WildCardRegexValidator();
         emailRegexLookBehindValidator = new EmailRegexLookBehindValidator();
