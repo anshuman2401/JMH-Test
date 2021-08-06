@@ -30,11 +30,11 @@ public class ExecutionPlan {
         emailRegexTrailingSpaceValidator = new EmailRegexTrailingSpaceValidator();
         emailList = new ArrayList<>();
 
-        for (int i = 0; i < 90; i++) {
+        for (int i = 0; i < 180; i++) {
             emailList.add(RandomUtils.getRandomEmail());
         }
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             emailList.add(RandomUtils.getRandomInvalidEmail());
         }
     }
