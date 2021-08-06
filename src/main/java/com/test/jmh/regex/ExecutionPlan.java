@@ -37,6 +37,10 @@ public class ExecutionPlan {
         for (int i = 0; i < 20; i++) {
             emailList.add(RandomUtils.getRandomInvalidEmail());
         }
+
+        for (int i = 0; i < 20; i++) {
+            emailList.add(RandomUtils.getRandomEmailWithTrailingSpace());
+        }
     }
 }
 
