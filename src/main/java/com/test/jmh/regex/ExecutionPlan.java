@@ -1,10 +1,7 @@
 package com.test.jmh.regex;
 
-import com.test.jmh.entries.TestEntry;
-import com.test.jmh.mapper.impl.BlankConverter;
-import com.test.jmh.mapper.impl.HandMappingConverter;
-import com.test.jmh.mapper.impl.ModelMapperConverter;
 import com.test.jmh.regex.impl.EmailRegexLookBehindValidator;
+import com.test.jmh.regex.impl.EmailRegexTrailingSpaceValidator;
 import com.test.jmh.regex.impl.EmailRegexValidator;
 import com.test.jmh.regex.impl.WildCardRegexValidator;
 import com.test.jmh.utils.RandomUtils;
@@ -22,6 +19,7 @@ public class ExecutionPlan {
     public WildCardRegexValidator wildCardRegexValidator;
     public EmailRegexLookBehindValidator emailRegexLookBehindValidator;
     public EmailRegexValidator emailRegexValidator;
+    public EmailRegexTrailingSpaceValidator emailRegexTrailingSpaceValidator;
     public List<String> emailList;
 
     @Setup(Level.Invocation)
@@ -29,7 +27,7 @@ public class ExecutionPlan {
         wildCardRegexValidator = new WildCardRegexValidator();
         emailRegexLookBehindValidator = new EmailRegexLookBehindValidator();
         emailRegexValidator = new EmailRegexValidator();
-
+        emailRegexTrailingSpaceValidator = new EmailRegexTrailingSpaceValidator();
         emailList = new ArrayList<>();
 
         for (int i = 0; i < 90; i++) {

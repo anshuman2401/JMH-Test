@@ -15,4 +15,8 @@ public class RandomUtils {
     public static String getRandomInvalidEmail() {
         return getRandomString() + "gmail.";
     }
+
+    public static String getRandomEmailWithTrailingSpace() {
+        return getRandomString() + "gmail.com   ";
+    }
 }
