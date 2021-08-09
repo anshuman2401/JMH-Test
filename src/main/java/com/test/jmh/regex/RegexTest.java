@@ -28,15 +28,23 @@ public class RegexTest {
     @BenchmarkMode(Mode.Throughput)
     public void emailRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (String email: executionPlan.emailList) {
-            blackhole.consume(executionPlan.emailRegexValidator.validate(email.trim()));
+            blackhole.consume(executionPlan.emailRegexValidator.validate(email));
         }
     }
 
+//    @Benchmark
+//    @BenchmarkMode(Mode.Throughput)
+//    public void emailRegexTrailingTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+//        for (String email: executionPlan.emailList) {
+//            blackhole.consume(executionPlan.emailRegexTrailingSpaceValidator.validate(email));
+//        }
+//    }
+
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
-    public void emailRegexTrailingTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+    public void stringMatchesTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (String email: executionPlan.emailList) {
-            blackhole.consume(executionPlan.emailRegexTrailingSpaceValidator.validate(email));
+            blackhole.consume(executionPlan.stringMatchesValidator.validate(email));
         }
     }
 }
