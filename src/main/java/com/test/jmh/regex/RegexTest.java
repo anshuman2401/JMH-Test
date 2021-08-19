@@ -8,13 +8,13 @@ import org.openjdk.jmh.infra.Blackhole;
 
 public class RegexTest {
 
-//    @Benchmark
-//    @BenchmarkMode(Mode.Throughput)
-//    public void wildCardRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
-//        for (String email: executionPlan.emailList) {
-//            blackhole.consume(executionPlan.wildCardRegexValidator.validate(email));
-//        }
-//    }
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    public void wildCardRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+        for (String email: executionPlan.emailList) {
+            blackhole.consume(executionPlan.wildCardRegexValidator.validate(email));
+        }
+    }
 
 //    @Benchmark
 //    @BenchmarkMode(Mode.AverageTime)
@@ -24,13 +24,13 @@ public class RegexTest {
 //        }
 //    }
 
-    @Benchmark
-    @BenchmarkMode(Mode.Throughput)
-    public void emailRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
-        for (String email: executionPlan.emailList) {
-            blackhole.consume(executionPlan.emailRegexValidator.validate(email));
-        }
-    }
+//    @Benchmark
+//    @BenchmarkMode(Mode.Throughput)
+//    public void emailRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+//        for (String email: executionPlan.emailList) {
+//            blackhole.consume(executionPlan.emailRegexValidator.validate(email));
+//        }
+//    }
 
 //    @Benchmark
 //    @BenchmarkMode(Mode.Throughput)
@@ -40,11 +40,27 @@ public class RegexTest {
 //        }
 //    }
 
+//    @Benchmark
+//    @BenchmarkMode(Mode.Throughput)
+//    public void stringMatchesTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+//        for (String email: executionPlan.emailList) {
+//            blackhole.consume(executionPlan.stringMatchesValidator.validate(email));
+//        }
+//    }
+
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
-    public void stringMatchesTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+    public void minLengthRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
         for (String email: executionPlan.emailList) {
-            blackhole.consume(executionPlan.stringMatchesValidator.validate(email));
+            blackhole.consume(executionPlan.minLengthRegexValidator.validate(email));
+        }
+    }
+
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    public void passwordRegexTest(Blackhole blackhole, ExecutionPlan executionPlan) {
+        for (String email: executionPlan.emailList) {
+            blackhole.consume(executionPlan.passwordRegexValidator.validate(email));
         }
     }
 }

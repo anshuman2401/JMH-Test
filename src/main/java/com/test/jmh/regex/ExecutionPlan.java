@@ -18,6 +18,8 @@ public class ExecutionPlan {
     public EmailRegexValidator emailRegexValidator;
     public EmailRegexTrailingSpaceValidator emailRegexTrailingSpaceValidator;
     public StringMatchesValidator stringMatchesValidator;
+    public PasswordRegexValidator passwordRegexValidator;
+    public MinLengthRegexValidator minLengthRegexValidator;
     public List<String> emailList;
 
     @Setup(Level.Invocation)
@@ -27,6 +29,8 @@ public class ExecutionPlan {
         emailRegexValidator = new EmailRegexValidator();
         emailRegexTrailingSpaceValidator = new EmailRegexTrailingSpaceValidator();
         stringMatchesValidator = new StringMatchesValidator();
+        passwordRegexValidator = new PasswordRegexValidator();
+        minLengthRegexValidator = new MinLengthRegexValidator();
         emailList = new ArrayList<>();
 
         for (int i = 0; i < 90; i++) {
