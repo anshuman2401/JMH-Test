@@ -3,10 +3,11 @@ package com.test.jmh.redis;
 import com.test.jmh.utils.RandomUtils;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 @Data
-public class TestObject {
+public class TestObject implements Serializable {
     private BigInteger id;
     private String uidx = RandomUtils.getRandomString();
     private String firstName = RandomUtils.getRandomString();
