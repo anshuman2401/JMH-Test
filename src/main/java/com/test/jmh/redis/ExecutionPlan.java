@@ -10,12 +10,12 @@ import org.openjdk.jmh.annotations.State;
 @State(Scope.Benchmark)
 public class ExecutionPlan {
 
-    public Jedis jedis;
-//    public Lettuce lettuce;
+//    public Jedis jedis;
+    public Lettuce lettuce;
 
     @Setup(Level.Trial)
     public void setUp() {
-        jedis = new Jedis();
-//        lettuce = new Lettuce();
+//        jedis = new Jedis();
+        lettuce = new Lettuce();
     }
 }
