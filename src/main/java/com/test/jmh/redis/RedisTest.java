@@ -19,21 +19,21 @@ public class RedisTest {
 //        executionPlan.lettuce.set(RandomUtils.getRandomString(), RandomUtils.getRandomString());
 //    }
 
-    @Threads(4)
-    @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    public void randomKeyGetJedisTest(ExecutionPlan executionPlan) {
-        for (String random: executionPlan.randomStringList)
-            executionPlan.jedis.get(random);
-    }
-
-    @Threads(4)
-    @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    public void randomKeyGetLettuceTest(ExecutionPlan executionPlan) {
-        for (String random: executionPlan.randomStringList)
-            executionPlan.lettuce.get(random);
-    }
+//    @Threads(4)
+//    @Benchmark
+//    @BenchmarkMode(Mode.AverageTime)
+//    public void randomKeyGetJedisTest(ExecutionPlan executionPlan) {
+//        for (String random: executionPlan.randomStringList)
+//            executionPlan.jedis.get(random);
+//    }
+//
+//    @Threads(4)
+//    @Benchmark
+//    @BenchmarkMode(Mode.AverageTime)
+//    public void randomKeyGetLettuceTest(ExecutionPlan executionPlan) {
+//        for (String random: executionPlan.randomStringList)
+//            executionPlan.lettuce.get(random);
+//    }
 
 
     @Threads(4)
