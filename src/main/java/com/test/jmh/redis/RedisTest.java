@@ -34,5 +34,14 @@ public class RedisTest {
         for (String random: executionPlan.randomStringList)
             executionPlan.lettuce.get(random);
     }
+
+
+    @Threads(4)
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    public void randomKeyGetRedissonTest(ExecutionPlan executionPlan) {
+        for (String random: executionPlan.randomStringList)
+            executionPlan.redissonClientTest.get(random);
+    }
 }
 
