@@ -3,6 +3,7 @@ package com.test.jmh.redis;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.Threads;
 
 public class RedisTest {
 
@@ -18,6 +19,7 @@ public class RedisTest {
 //        executionPlan.lettuce.set(RandomUtils.getRandomString(), RandomUtils.getRandomString());
 //    }
 
+    @Threads(4)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void randomKeyGetJedisTest(ExecutionPlan executionPlan) {
@@ -25,6 +27,7 @@ public class RedisTest {
             executionPlan.jedis.get(random);
     }
 
+    @Threads(4)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void randomKeyGetLettuceTest(ExecutionPlan executionPlan) {
