@@ -8,7 +8,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Jedis implements RedisFactory {
+public class Jedis implements RedisFactory<String, String> {
 
     private static final JedisCluster cluster;
 

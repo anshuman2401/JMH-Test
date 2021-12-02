@@ -3,7 +3,6 @@ package com.test.jmh.redis;
 import com.test.jmh.redis.clients.Jedis;
 import com.test.jmh.redis.clients.Lettuce;
 import com.test.jmh.redis.clients.RedissonClientTest;
-import com.test.jmh.utils.RandomUtils;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
@@ -28,9 +27,9 @@ public class ExecutionPlan {
         randomStringList = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++) {
-            String random = RandomUtils.getRandomString();
-            randomStringList.add(random);
-            redissonClientTest.set(random, RandomUtils.getRandomString());
+            TestObject testObject = new TestObject();
+            randomStringList.add(testObject.getUidx());
+            redissonClientTest.set(testObject.getUidx(), testObject);
         }
     }
 }

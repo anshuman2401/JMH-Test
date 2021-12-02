@@ -1,8 +1,8 @@
 package com.test.jmh.redis;
 
-public interface RedisFactory {
+public interface RedisFactory<K, V> {
 
-    void set(String key, String value);
+    void set(K key, V value);
 
-    String get(String key);
+    V get(K key);
 }

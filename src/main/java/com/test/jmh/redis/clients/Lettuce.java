@@ -5,7 +5,7 @@ import io.lettuce.core.cluster.RedisClusterClient;
 import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;
 import io.lettuce.core.cluster.api.sync.RedisAdvancedClusterCommands;
 
-public class Lettuce implements RedisFactory {
+public class Lettuce implements RedisFactory<String, String> {
 
     private static StatefulRedisClusterConnection<String, String> cluster = null;
 

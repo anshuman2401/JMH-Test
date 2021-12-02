@@ -1,12 +1,11 @@
 package com.test.jmh.redis.clients;
 
 import com.test.jmh.redis.RedisFactory;
-import org.apache.commons.lang3.StringUtils;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
-public class RedissonClientTest implements RedisFactory {
+public class RedissonClientTest implements RedisFactory<String, Object> {
 
     private final RedissonClient redisson;
 
@@ -19,13 +18,12 @@ public class RedissonClientTest implements RedisFactory {
     }
 
     @Override
-    public void set(String key, String value) {
+    public void set(String key, Object value) {
         redisson.getBucket(key).set(value);
     }
 
     @Override
-    public String get(String key) {
-        redisson.getBucket(key).get();
-        return "";
+    public Object get(String key) {
+        return redisson.getBucket(key).get();
     }
 }
