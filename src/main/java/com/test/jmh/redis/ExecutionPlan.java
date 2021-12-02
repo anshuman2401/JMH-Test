@@ -16,20 +16,20 @@ public class ExecutionPlan {
 
     public Jedis jedis;
     public Lettuce lettuce;
-    public RedissonClientTest redissonClientTest;
+//    public RedissonClientTest redissonClientTest;
     public List<String> randomStringList;
 
     @Setup(Level.Trial)
     public void setUp() {
         jedis = new Jedis();
         lettuce = new Lettuce();
-        redissonClientTest = new RedissonClientTest();
+//        redissonClientTest = new RedissonClientTest();
         randomStringList = new ArrayList<>();
 
         for (int i = 0; i < 1000; i++) {
             TestObject testObject = new TestObject();
             randomStringList.add(testObject.getUidx());
-            redissonClientTest.set(testObject.getUidx(), testObject);
+            lettuce.set(testObject.getUidx(), testObject);
         }
     }
 }
