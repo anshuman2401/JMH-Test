@@ -21,7 +21,7 @@ public class RedisTest {
 
     @Threads(4)
     @Benchmark
-    @BenchmarkMode(Mode.Throughput)
+    @BenchmarkMode(Mode.AverageTime)
     public void randomKeyGetJedisTest(ExecutionPlan executionPlan) {
         for (String random: executionPlan.randomStringList)
             executionPlan.jedis.get(random);
@@ -29,7 +29,7 @@ public class RedisTest {
 
     @Threads(4)
     @Benchmark
-    @BenchmarkMode(Mode.Throughput)
+    @BenchmarkMode(Mode.AverageTime)
     public void randomKeyGetLettuceTest(ExecutionPlan executionPlan) {
         for (String random: executionPlan.randomStringList)
             executionPlan.lettuce.get(random);
@@ -38,7 +38,7 @@ public class RedisTest {
 
     @Threads(4)
     @Benchmark
-    @BenchmarkMode(Mode.Throughput)
+    @BenchmarkMode(Mode.AverageTime)
     public void randomKeyGetRedissonTest(ExecutionPlan executionPlan) {
         for (String random: executionPlan.randomStringList)
             executionPlan.redissonClientTest.get(random);
