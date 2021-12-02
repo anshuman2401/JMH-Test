@@ -30,7 +30,7 @@ public class ExecutionPlan {
         for (int i = 0; i < 1000; i++) {
             String random = RandomUtils.getRandomString();
             randomStringList.add(random);
-            jedis.set(random, RandomUtils.getRandomString());
+            redissonClientTest.set(random, RandomUtils.getRandomString());
         }
     }
 }
