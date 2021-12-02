@@ -24,7 +24,7 @@ public class ExecutionPlan {
         lettuce = new Lettuce();
         randomStringList = new ArrayList<>();
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000; i++) {
             String random = RandomUtils.getRandomString();
             randomStringList.add(random);
             jedis.set(random, RandomUtils.getRandomString());
