@@ -11,11 +11,11 @@ import org.openjdk.jmh.annotations.State;
 public class ExecutionPlan {
 
     public Jedis jedis;
-    public Lettuce lettuce;
+//    public Lettuce lettuce;
 
-    @Setup(Level.Invocation)
+    @Setup(Level.Trial)
     public void setUp() {
         jedis = new Jedis();
-        lettuce = new Lettuce();
+//        lettuce = new Lettuce();
     }
 }
