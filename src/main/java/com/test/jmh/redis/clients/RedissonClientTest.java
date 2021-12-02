@@ -1,6 +1,7 @@
 package com.test.jmh.redis.clients;
 
 import com.test.jmh.redis.RedisFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -24,6 +25,7 @@ public class RedissonClientTest implements RedisFactory {
 
     @Override
     public String get(String key) {
-        return redisson.getBucket(key).get().toString();
+        redisson.getBucket(key).get();
+        return "";
     }
 }
