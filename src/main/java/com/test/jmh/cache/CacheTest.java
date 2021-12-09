@@ -5,7 +5,7 @@ import org.openjdk.jmh.infra.Blackhole;
 
 public class CacheTest {
 
-    @Threads(Threads.MAX)
+    @Threads(4)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void guavaBigCacheTest(Blackhole blackhole, ExecutionPlan executionPlan) {
@@ -13,7 +13,7 @@ public class CacheTest {
             blackhole.consume(executionPlan.guavaCache.get(executionPlan.bigCacheKey));
     }
 
-    @Threads(Threads.MAX)
+    @Threads(4)
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     public void guavaSmallCacheTest(Blackhole blackhole, ExecutionPlan executionPlan) {

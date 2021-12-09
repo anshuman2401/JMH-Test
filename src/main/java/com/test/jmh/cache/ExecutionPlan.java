@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations.State;
 @State(Scope.Benchmark)
 public class ExecutionPlan {
 
-    public int iterations = 1000;
+    public int iterations = 500;
     public GuavaCacheImpl guavaCache;
     public String bigCacheKey;
     public String smallCacheKey;
@@ -18,7 +18,7 @@ public class ExecutionPlan {
     @Setup(Level.Iteration)
     public void setUp() {
         guavaCache = new GuavaCacheImpl();
-        bigCacheKey = RandomUtils.getRandomString(200);
+        bigCacheKey = RandomUtils.getRandomString(150);
         smallCacheKey = RandomUtils.getRandomString();
         guavaCache.get(bigCacheKey);
         guavaCache.get(smallCacheKey);
