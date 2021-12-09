@@ -4,8 +4,12 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 public class RandomUtils {
 
+    public static String getRandomString(int len) {
+        return RandomStringUtils.random(len, true, true);
+    }
+
     public static String getRandomString() {
-        return RandomStringUtils.random(15, true, true);
+        return getRandomString(15);
     }
 
     public static String getRandomEmail() {
