@@ -10,6 +10,11 @@ public class RedissonClientTest implements RedisFactory<String, Object> {
     }
 
     @Override
+    public void hset(String prefix, String key, Object value) {
+
+    }
+
+    @Override
     public Object get(String key) {
         return RedissonClientFactory.getClient().getBucket(key).get();
     }
