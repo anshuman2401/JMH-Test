@@ -42,7 +42,7 @@ public class Jedis implements RedisFactory<String, String> {
 
     @Override
     public void hset(String prefix, String key, String value) {
-        getCluster().hset("profile:" + prefix, key, value);
+        getCluster().hset("profile", key, value);
     }
 
     @Override

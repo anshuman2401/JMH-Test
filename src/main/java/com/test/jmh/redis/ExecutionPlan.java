@@ -1,5 +1,6 @@
 package com.test.jmh.redis;
 
+import com.google.gson.Gson;
 import com.test.jmh.redis.clients.Jedis;
 import com.test.jmh.redis.clients.Lettuce;
 import com.test.jmh.redis.clients.RedissonClientTest;
@@ -15,6 +16,7 @@ import java.util.List;
 public class ExecutionPlan {
 
     public Jedis jedis;
+    public Gson gson;
 //    public Lettuce lettuce;
 //    public RedissonClientTest redissonClientTest;
     public List<String> randomStringList;
@@ -22,6 +24,7 @@ public class ExecutionPlan {
     @Setup(Level.Trial)
     public void setUp() {
         jedis = new Jedis();
+        gson = new Gson();
 //        lettuce = new Lettuce();
 //        redissonClientTest = new RedissonClientTest();
     }

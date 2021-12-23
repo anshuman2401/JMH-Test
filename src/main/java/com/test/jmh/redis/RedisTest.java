@@ -49,14 +49,15 @@ public class RedisTest {
     @BenchmarkMode(Mode.Throughput)
     public void randomKeyHSetJedisTest(ExecutionPlan executionPlan) {
         TestObject testObject = new TestObject();
-        executionPlan.jedis.hset(testObject.getUidx(), "amn", testObject.getAmnNickName());
-        executionPlan.jedis.hset(testObject.getUidx(), "firstName", testObject.getFirstName());
-        executionPlan.jedis.hset(testObject.getUidx(), "lastName", testObject.getLastName());
-        executionPlan.jedis.hset(testObject.getUidx(), "amnPhone", testObject.getAlternatePhone());
-        executionPlan.jedis.hset(testObject.getUidx(), "phone", testObject.getPhone());
-        executionPlan.jedis.hset(testObject.getUidx(), "email", testObject.getEmail());
-        executionPlan.jedis.hset(testObject.getUidx(), "normalizedEmail", testObject.getNormalizedEmail());
-        executionPlan.jedis.hset(testObject.getUidx(), "uidx", testObject.getUidx());
+        executionPlan.jedis.hset("", testObject.getUidx(), executionPlan.gson.toJson(testObject));
+//        executionPlan.jedis.hset(testObject.getUidx(), "amn", testObject.getAmnNickName());
+//        executionPlan.jedis.hset(testObject.getUidx(), "firstName", testObject.getFirstName());
+//        executionPlan.jedis.hset(testObject.getUidx(), "lastName", testObject.getLastName());
+//        executionPlan.jedis.hset(testObject.getUidx(), "amnPhone", testObject.getAlternatePhone());
+//        executionPlan.jedis.hset(testObject.getUidx(), "phone", testObject.getPhone());
+//        executionPlan.jedis.hset(testObject.getUidx(), "email", testObject.getEmail());
+//        executionPlan.jedis.hset(testObject.getUidx(), "normalizedEmail", testObject.getNormalizedEmail());
+//        executionPlan.jedis.hset(testObject.getUidx(), "uidx", testObject.getUidx());
     }
 }
 
