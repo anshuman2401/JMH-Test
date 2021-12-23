@@ -15,21 +15,14 @@ import java.util.List;
 public class ExecutionPlan {
 
     public Jedis jedis;
-    public Lettuce lettuce;
+//    public Lettuce lettuce;
 //    public RedissonClientTest redissonClientTest;
     public List<String> randomStringList;
 
     @Setup(Level.Trial)
     public void setUp() {
         jedis = new Jedis();
-        lettuce = new Lettuce();
+//        lettuce = new Lettuce();
 //        redissonClientTest = new RedissonClientTest();
-        randomStringList = new ArrayList<>();
-
-        for (int i = 0; i < 1000; i++) {
-            TestObject testObject = new TestObject();
-            randomStringList.add(testObject.getUidx());
-            lettuce.set(testObject.getUidx(), testObject);
-        }
     }
 }

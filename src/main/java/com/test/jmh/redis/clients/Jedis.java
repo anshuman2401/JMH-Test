@@ -15,12 +15,14 @@ public class Jedis implements RedisFactory<String, String> {
     static {
         Set<HostAndPort> nodes = new HashSet<>();
         nodes.add(new HostAndPort("10.162.186.40", 7001));
+        nodes.add(new HostAndPort("10.162.186.40", 7002));
+        nodes.add(new HostAndPort("10.162.186.40", 7003));
+
         JedisPoolConfig config = new JedisPoolConfig();
         config.setMaxTotal(10000);
         config.setMaxIdle(500);
 
         cluster = new JedisCluster(nodes, config);
-
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
@@ -36,6 +38,11 @@ public class Jedis implements RedisFactory<String, String> {
     @Override
     public void set(String key, String value) {
         getCluster().set(key, value);
+    }
+
+    @Override
+    public void hset(String prefix, String key, String value) {
+        getCluster().hset("profile:" + prefix, key, value);
     }
 
     @Override

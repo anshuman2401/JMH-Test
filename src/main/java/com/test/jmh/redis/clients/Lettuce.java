@@ -71,6 +71,11 @@ public class Lettuce implements RedisFactory<String, Object> {
     }
 
     @Override
+    public void hset(String key, Object value) {
+
+    }
+
+    @Override
     public Object get(String key) {
         return getCluster().get(key);
     }
