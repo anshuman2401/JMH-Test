@@ -22,6 +22,6 @@ public class KeyExecutionPlan {
         jedis = new Jedis();
 //        lettuce = new Lettuce();
         gson = new Gson();
-        randomStringList = FileUtils.fileToList("randomString.txt");
+        randomStringList = FileUtils.fileToList("/home/myntra/randomString.txt");
     }
 }
