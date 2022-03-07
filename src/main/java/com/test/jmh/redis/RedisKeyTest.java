@@ -1,6 +1,7 @@
 package com.test.jmh.redis;
 
 import com.test.jmh.redis.utils.Transformer;
+import com.test.jmh.utils.RandomUtils;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
@@ -14,8 +15,7 @@ public class RedisKeyTest {
     @BenchmarkMode(Mode.Throughput)
     @Threads(Threads.MAX)
     public void keyAsPrefixAndUidxJedisTest(KeyExecutionPlan executionPlan) {
-        for (String key : executionPlan.randomStringList)
-            executionPlan.jedis.set(key, executionPlan.gson.toJson(Transformer.createRandomProfile()));
+        executionPlan.jedis.set(RandomUtils.getRandomString(80), executionPlan.gson.toJson(Transformer.createRandomProfile()));
     }
 
 //    // key as profile:uidx and value as profile object (Jedis client)
