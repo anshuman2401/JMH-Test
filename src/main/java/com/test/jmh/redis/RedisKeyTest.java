@@ -15,7 +15,7 @@ public class RedisKeyTest {
     @BenchmarkMode(Mode.Throughput)
     @Threads(Threads.MAX)
     public void keyAsPrefixAndUidxJedisTest(KeyExecutionPlan executionPlan) {
-        executionPlan.jedis.set(RandomUtils.getRandomString(80), executionPlan.gson.toJson(Transformer.createRandomProfile()));
+        executionPlan.jedis.set(RandomUtils.getRandomString(43), executionPlan.gson.toJson(Transformer.createRandomProfile()));
     }
 
 //    // key as profile:uidx and value as profile object (Jedis client)
