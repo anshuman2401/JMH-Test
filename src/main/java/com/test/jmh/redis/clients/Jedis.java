@@ -6,6 +6,7 @@ import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Jedis implements RedisFactory<String, String> {
@@ -43,6 +44,11 @@ public class Jedis implements RedisFactory<String, String> {
     @Override
     public void hset(String prefix, String key, String value) {
         getCluster().hset("profile", key, value);
+    }
+
+    @Override
+    public void hset(String prefix, Map<String, String> keyValueMap) {
+        getCluster().hset("profile", keyValueMap);
     }
 
     @Override

@@ -13,6 +13,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.util.Map;
 
 public class Lettuce implements RedisFactory<String, Object> {
 
@@ -76,7 +77,13 @@ public class Lettuce implements RedisFactory<String, Object> {
     }
 
     @Override
+    public void hset(String prefix, Map<String, Object> keyValueMap) {
+
+    }
+
+    @Override
     public void hset(String prefix, String key, Object value) {
+
 
     }
 }

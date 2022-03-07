@@ -2,6 +2,8 @@ package com.test.jmh.redis.clients;
 
 import com.test.jmh.redis.RedisFactory;
 
+import java.util.Map;
+
 public class RedissonClientTest implements RedisFactory<String, Object> {
 
     @Override
@@ -11,6 +13,11 @@ public class RedissonClientTest implements RedisFactory<String, Object> {
 
     @Override
     public void hset(String prefix, String key, Object value) {
+
+    }
+
+    @Override
+    public void hset(String prefix, Map<String, Object> keyValueMap) {
 
     }
 
