@@ -32,7 +32,7 @@ public class Transformer {
         Map<String, String> entry = new HashMap<>();
         entry.put(UUID.randomUUID().toString(), gson.toJson(createRandomProfile()));
         entry.put(UUID.randomUUID().toString(), gson.toJson(createRandomProfile()));
-//        entry.put(UUID.randomUUID().toString(), gson.toJson(createRandomProfile()));
+        entry.put(UUID.randomUUID().toString(), gson.toJson(createRandomProfile()));
 //        entry.put(UUID.randomUUID().toString(), gson.toJson(createRandomProfile()));
 //        entry.put(UUID.randomUUID().toString(), gson.toJson(createRandomProfile()));
         return entry;
