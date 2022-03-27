@@ -15,7 +15,7 @@ public class RedisKeyTest {
     @BenchmarkMode(Mode.Throughput)
     @Threads(Threads.MAX)
     public void keyAsPrefixAndUidxJedisTest(KeyExecutionPlan executionPlan) {
-        executionPlan.jedis.set(RandomUtils.getRandomString(83), executionPlan.gson.toJson(Transformer.createRandomProfile()));
+        executionPlan.jedis.set(RandomUtils.getRandomString(85), executionPlan.gson.toJson(Transformer.createRandomProfile()));
     }
 
 //    // key as profile:uidx and value as profile object (Jedis client)
@@ -27,12 +27,12 @@ public class RedisKeyTest {
 //            executionPlan.lettuce.set(key, executionPlan.gson.toJson(Transformer.createRandomProfile()));
 //    }
 //
-    @Benchmark
-    @BenchmarkMode(Mode.Throughput)
-    @Threads(Threads.MAX)
-    public void keyAsPrefixAndUidxAndValueAsHashJedisTest(KeyExecutionPlan executionPlan) {
-        executionPlan.jedis.hset(RandomUtils.getRandomString(43), Transformer.createRandomListOfProfileMap());
-    }
+//    @Benchmark
+//    @BenchmarkMode(Mode.Throughput)
+//    @Threads(Threads.MAX)
+//    public void keyAsPrefixAndUidxAndValueAsHashJedisTest(KeyExecutionPlan executionPlan) {
+//        executionPlan.jedis.hset(RandomUtils.getRandomString(47), Transformer.createRandomListOfProfileMap());
+//    }
 
 //    // key as profile:uidx and value as profile object (Jedis client)
 //    @Benchmark
