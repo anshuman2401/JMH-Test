@@ -11,12 +11,12 @@ public class RedisKeyTest {
 
 
     // key as profile:uidx and value as profile object (Jedis client)
-//    @Benchmark
-//    @BenchmarkMode(Mode.Throughput)
-//    @Threads(Threads.MAX)
-//    public void keyAsPrefixAndUidxJedisTest(KeyExecutionPlan executionPlan) {
-//        executionPlan.jedis.set(RandomUtils.getRandomString(43), executionPlan.gson.toJson(Transformer.createRandomProfile()));
-//    }
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    @Threads(Threads.MAX)
+    public void keyAsPrefixAndUidxJedisTest(KeyExecutionPlan executionPlan) {
+        executionPlan.jedis.set(RandomUtils.getRandomString(83), executionPlan.gson.toJson(Transformer.createRandomProfile()));
+    }
 
 //    // key as profile:uidx and value as profile object (Jedis client)
 //    @Benchmark
