@@ -13,7 +13,7 @@ public class Transformer {
 
     public static ProfileEntry createRandomProfile() {
         ProfileEntry entry = new ProfileEntry();
-        entry.setPidx(UUID.randomUUID().toString());
+//        entry.setPidx(UUID.randomUUID().toString());
         entry.setName("Anshuman Kaushik");
         entry.setDefaultProfile(true);
         entry.setImage("http://assets.myntassets.com/assets/images/2021/5/12/49d1f015-5e87-4650-b30a-4f638461cfe21620808191515-temp_photo.jpg");
